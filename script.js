@@ -1,4 +1,3 @@
-// Predefined 10 Products
 const PRODUCTS = [
   { name: "Samsung 7kg Front Load Washing Machine", category: "Electronics", sku: "ELEC-001", assetTag: "AST-001", icon: "washer" },
   { name: "LG 260L Double Door Refrigerator", category: "Electronics", sku: "ELEC-002", assetTag: "AST-002", icon: "fridge" },
@@ -12,43 +11,29 @@ const PRODUCTS = [
   { name: "2-Door Wooden Wardrobe", category: "Furniture", sku: "FURN-005", assetTag: "AST-010", icon: "wardrobe" }
 ];
 
-// Demo Customer Details
 const DEMO_CUSTOMER = {
   name: "Demo Customer",
   email: "demo.customer@guarented.com",
   phone: "9876543210"
 };
 
-// SVG Placeholder generator for crisp display without external image dependencies
 function getSvgIcon(type) {
-  const commonAttrs = 'viewBox="0 0 24 24" width="60" height="60" stroke="#1a365d" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"';
+  const commonAttrs = 'viewBox="0 0 24 24" width="60" height="60" stroke="#0e2238" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"';
   switch (type) {
-    case 'washer':
-      return `<svg ${commonAttrs}><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M12 10a3 3 0 0 1 3 3"/></svg>`;
-    case 'fridge':
-      return `<svg ${commonAttrs}><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/><line x1="9" y1="5" x2="9" y2="7"/><line x1="9" y1="14" x2="9" y2="17"/></svg>`;
-    case 'tv':
-      return `<svg ${commonAttrs}><rect x="2" y="7" width="20" height="13" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>`;
-    case 'ac':
-      return `<svg ${commonAttrs}><rect x="2" y="5" width="20" height="10" rx="2"/><line x1="6" y1="19" x2="18" y2="19"/><line x1="8" y1="15" x2="16" y2="15"/></svg>`;
-    case 'microwave':
-      return `<svg ${commonAttrs}><rect x="2" y="4" width="20" height="16" rx="2"/><rect x="4" y="7" width="11" height="10" rx="1"/><line x1="18" y1="8" x2="18" y2="8.01"/><line x1="18" y1="12" x2="18" y2="12.01"/></svg>`;
-    case 'sofa':
-      return `<svg ${commonAttrs}><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0z"/><line x1="4" y1="18" x2="4" y2="21"/><line x1="20" y1="18" x2="20" y2="21"/></svg>`;
-    case 'bed':
-      return `<svg ${commonAttrs}><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>`;
-    case 'table':
-      return `<svg ${commonAttrs}><path d="M4 10h16"/><path d="M6 10v10"/><path d="M18 10v10"/><path d="M3 6h18v4H3z"/></svg>`;
-    case 'chair':
-      return `<svg ${commonAttrs}><circle cx="12" cy="7" r="3"/><path d="M5 21v-4a7 7 0 0 1 14 0v4"/><line x1="8" y1="14" x2="16" y2="14"/></svg>`;
-    case 'wardrobe':
-      return `<svg ${commonAttrs}><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="2" x2="12" y2="22"/><circle cx="10" cy="12" r="1"/><circle cx="14" cy="12" r="1"/></svg>`;
-    default:
-      return `<svg ${commonAttrs}><rect x="3" y="3" width="18" height="18" rx="2"/></svg>`;
+    case 'washer': return `<svg ${commonAttrs}><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M12 10a3 3 0 0 1 3 3"/></svg>`;
+    case 'fridge': return `<svg ${commonAttrs}><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="10"/><line x1="9" y1="5" x2="9" y2="7"/><line x1="9" y1="14" x2="9" y2="17"/></svg>`;
+    case 'tv': return `<svg ${commonAttrs}><rect x="2" y="7" width="20" height="13" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>`;
+    case 'ac': return `<svg ${commonAttrs}><rect x="2" y="5" width="20" height="10" rx="2"/><line x1="6" y1="19" x2="18" y2="19"/><line x1="8" y1="15" x2="16" y2="15"/></svg>`;
+    case 'microwave': return `<svg ${commonAttrs}><rect x="2" y="4" width="20" height="16" rx="2"/><rect x="4" y="7" width="11" height="10" rx="1"/><line x1="18" y1="8" x2="18" y2="8.01"/><line x1="18" y1="12" x2="18" y2="12.01"/></svg>`;
+    case 'sofa': return `<svg ${commonAttrs}><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0z"/><line x1="4" y1="18" x2="4" y2="21"/><line x1="20" y1="18" x2="20" y2="21"/></svg>`;
+    case 'bed': return `<svg ${commonAttrs}><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>`;
+    case 'table': return `<svg ${commonAttrs}><path d="M4 10h16"/><path d="M6 10v10"/><path d="M18 10v10"/><path d="M3 6h18v4H3z"/></svg>`;
+    case 'chair': return `<svg ${commonAttrs}><circle cx="12" cy="7" r="3"/><path d="M5 21v-4a7 7 0 0 1 14 0v4"/><line x1="8" y1="14" x2="16" y2="14"/></svg>`;
+    case 'wardrobe': return `<svg ${commonAttrs}><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="2" x2="12" y2="22"/><circle cx="10" cy="12" r="1"/><circle cx="14" cy="12" r="1"/></svg>`;
+    default: return `<svg ${commonAttrs}><rect x="3" y="3" width="18" height="18" rx="2"/></svg>`;
   }
 }
 
-// Track iframe state to trigger success only post-submission
 let isFormSubmitting = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -59,18 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFormValidationAndSubmission();
 });
 
-// Render the 10 Product Cards
 function renderProductGrid() {
   const grid = document.getElementById("product-grid");
+  if (!grid) return;
   grid.innerHTML = "";
 
   PRODUCTS.forEach((product) => {
     const card = document.createElement("div");
     card.className = "product-card";
     card.innerHTML = `
-      <div class="product-image">
-        ${getSvgIcon(product.icon)}
-      </div>
+      <div class="product-image">${getSvgIcon(product.icon)}</div>
       <div class="product-info">
         <div class="product-meta-row">
           <span class="product-category">${product.category}</span>
@@ -81,18 +64,16 @@ function renderProductGrid() {
           <span>SKU: <strong>${product.sku}</strong></span>
           <span>Asset Tag: <strong>${product.assetTag}</strong></span>
         </div>
-        <button type="button" class="btn-card" onclick="selectProductForRequest('${product.name}')">
-          Raise Request
-        </button>
+        <button type="button" class="btn-card" onclick="selectProductForRequest('${product.name}')">Raise Request</button>
       </div>
     `;
     grid.appendChild(card);
   });
 }
 
-// Populate the Product select menu
 function populateProductDropdown() {
   const select = document.getElementById("product_select");
+  if (!select) return;
   PRODUCTS.forEach((p) => {
     const option = document.createElement("option");
     option.value = p.name;
@@ -101,27 +82,30 @@ function populateProductDropdown() {
   });
 }
 
-// Prepopulate the demo customer fields
 function populateDemoCustomer() {
-  document.getElementById("name").value = DEMO_CUSTOMER.name;
-  document.getElementById("email").value = DEMO_CUSTOMER.email;
-  document.getElementById("phone").value = DEMO_CUSTOMER.phone;
+  const nameEl = document.getElementById("name");
+  const emailEl = document.getElementById("email");
+  const phoneEl = document.getElementById("phone");
+  if (nameEl) nameEl.value = DEMO_CUSTOMER.name;
+  if (emailEl) emailEl.value = DEMO_CUSTOMER.email;
+  if (phoneEl) phoneEl.value = DEMO_CUSTOMER.phone;
 }
 
-// Product Selection Handler (From Product Card)
 function selectProductForRequest(productName) {
   const productSelect = document.getElementById("product_select");
-  productSelect.value = productName;
-  updateAssetTag(productName);
-  
-  // Smooth scroll down to the form
+  if (productSelect) {
+    productSelect.value = productName;
+    updateAssetTag(productName);
+  }
   const requestSection = document.getElementById("request-section");
-  requestSection.scrollIntoView({ behavior: "smooth" });
+  if (requestSection) {
+    requestSection.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
-// Update Asset Tag automatically when Product changes
 function updateAssetTag(productName) {
   const assetTagField = document.getElementById("asset_tag");
+  if (!assetTagField) return;
   const found = PRODUCTS.find((p) => p.name === productName);
   if (found) {
     assetTagField.value = found.assetTag;
@@ -132,7 +116,6 @@ function updateAssetTag(productName) {
   }
 }
 
-// Handle Dynamic Dropdown Behavior
 function setupDynamicFormLogic() {
   const reqTypeSelect = document.getElementById("request_type");
   const installGroup = document.getElementById("install_date_group");
@@ -141,44 +124,38 @@ function setupDynamicFormLogic() {
   const refundReasonSelect = document.getElementById("refund_reason");
   const productSelect = document.getElementById("product_select");
 
-  // Product change event
-  productSelect.addEventListener("change", (e) => {
-    updateAssetTag(e.target.value);
-  });
+  if (productSelect) {
+    productSelect.addEventListener("change", (e) => updateAssetTag(e.target.value));
+  }
 
-  // Request Type change event
-  reqTypeSelect.addEventListener("change", (e) => {
-    const value = e.target.value;
-    clearError("request_type");
-
-    if (value === "Installation Request") {
-      installGroup.style.display = "flex";
-      refundGroup.style.display = "none";
-      refundReasonSelect.value = "";
-      clearError("refund_reason");
-    } else if (value === "Refund Request") {
-      refundGroup.style.display = "flex";
-      installGroup.style.display = "none";
-      installDateInput.value = "";
-      clearError("install_date");
-    } else {
-      installGroup.style.display = "none";
-      refundGroup.style.display = "none";
-      installDateInput.value = "";
-      refundReasonSelect.value = "";
-      clearError("install_date");
-      clearError("refund_reason");
-    }
-  });
+  if (reqTypeSelect) {
+    reqTypeSelect.addEventListener("change", (e) => {
+      const val = e.target.value;
+      clearError("request_type");
+      if (val === "Installation Request") {
+        if (installGroup) installGroup.style.display = "flex";
+        if (refundGroup) refundGroup.style.display = "none";
+        if (refundReasonSelect) refundReasonSelect.value = "";
+      } else if (val === "Refund Request") {
+        if (refundGroup) refundGroup.style.display = "flex";
+        if (installGroup) installGroup.style.display = "none";
+        if (installDateInput) installDateInput.value = "";
+      } else {
+        if (installGroup) installGroup.style.display = "none";
+        if (refundGroup) refundGroup.style.display = "none";
+      }
+    });
+  }
 }
 
-// Validation & Submission Handling
 function setupFormValidationAndSubmission() {
   const form = document.getElementById("caseForm");
   const iframe = document.getElementById("sf_post_target");
   const modal = document.getElementById("successModal");
   const modalCloseBtn = document.getElementById("modalCloseBtn");
   const submitBtn = document.getElementById("submitBtn");
+
+  if (!form) return;
 
   form.addEventListener("submit", (e) => {
     const isValid = validateForm();
@@ -187,39 +164,54 @@ function setupFormValidationAndSubmission() {
       return;
     }
 
-    // Set submission flag and show loading state
+    // Set standard Case Subject: Request Type - Product (Asset Tag)
+    const reqType = document.getElementById("request_type").value;
+    const product = document.getElementById("product_select").value;
+    const assetTag = document.getElementById("asset_tag").value;
+    const sfSubject = document.getElementById("sf_subject");
+    if (sfSubject) {
+      sfSubject.value = `${reqType} - ${product} (${assetTag})`;
+    }
+
     isFormSubmitting = true;
-    submitBtn.disabled = true;
-    submitBtn.querySelector(".btn-text").textContent = "Submitting...";
-  });
-
-  // Listen to iframe load event (Salesforce Web-to-Case redirect)
-  iframe.addEventListener("load", () => {
-    if (isFormSubmitting) {
-      isFormSubmitting = false;
-      submitBtn.disabled = false;
-      submitBtn.querySelector(".btn-text").textContent = "Submit Request";
-
-      // Show confirmation modal
-      modal.style.display = "flex";
-
-      // Reset form while keeping demo customer intact
-      form.reset();
-      populateDemoCustomer();
-      document.getElementById("install_date_group").style.display = "none";
-      document.getElementById("refund_reason_group").style.display = "none";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      const textSpan = submitBtn.querySelector(".btn-text");
+      if (textSpan) textSpan.textContent = "Submitting...";
     }
   });
 
-  modalCloseBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+  if (iframe) {
+    iframe.addEventListener("load", () => {
+      if (isFormSubmitting) {
+        isFormSubmitting = false;
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          const textSpan = submitBtn.querySelector(".btn-text");
+          if (textSpan) textSpan.textContent = "Submit Request";
+        }
+
+        if (modal) modal.style.display = "flex";
+
+        form.reset();
+        populateDemoCustomer();
+        const installGroup = document.getElementById("install_date_group");
+        const refundGroup = document.getElementById("refund_reason_group");
+        if (installGroup) installGroup.style.display = "none";
+        if (refundGroup) refundGroup.style.display = "none";
+      }
+    });
+  }
+
+  if (modalCloseBtn && modal) {
+    modalCloseBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
 }
 
-// Form Validation logic
 function validateForm() {
   let isValid = true;
-
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const phone = document.getElementById("phone").value.trim();
@@ -228,60 +220,16 @@ function validateForm() {
   const assetTag = document.getElementById("asset_tag").value.trim();
   const desc = document.getElementById("description").value.trim();
 
-  // Name check
-  if (!name) {
-    showError("name", "Customer Name is required.");
-    isValid = false;
-  } else {
-    clearError("name");
-  }
+  if (!name) { showError("name", "Customer Name is required."); isValid = false; } else clearError("name");
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError("email", "Valid Email Address is required."); isValid = false; } else clearError("email");
+  if (!phone || phone.replace(/[^0-9]/g, "").length < 10) { showError("phone", "Valid 10-digit Phone Number is required."); isValid = false; } else clearError("phone");
+  if (!reqType) { showError("request_type", "Please select a Request Type."); isValid = false; } else clearError("request_type");
+  if (!product) { showError("product_select", "Please select a product."); isValid = false; } else clearError("product_select");
+  if (!assetTag) { showError("asset_tag", "Asset Tag missing."); isValid = false; } else clearError("asset_tag");
 
-  // Email check
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email || !emailRegex.test(email)) {
-    showError("email", "Valid Email Address is required.");
-    isValid = false;
-  } else {
-    clearError("email");
-  }
-
-  // Phone check
-  const phoneClean = phone.replace(/[^0-9]/g, "");
-  if (!phoneClean || phoneClean.length < 10) {
-    showError("phone", "Valid 10-digit Phone Number is required.");
-    isValid = false;
-  } else {
-    clearError("phone");
-  }
-
-  // Request Type check
-  if (!reqType) {
-    showError("request_type", "Please select a Request Type.");
-    isValid = false;
-  } else {
-    clearError("request_type");
-  }
-
-  // Product check
-  if (!product) {
-    showError("product_select", "Please select a product.");
-    isValid = false;
-  } else {
-    clearError("product_select");
-  }
-
-  // Asset Tag check
-  if (!assetTag) {
-    showError("asset_tag", "Asset Tag missing. Select a product.");
-    isValid = false;
-  } else {
-    clearError("asset_tag");
-  }
-
-  // Conditional Validation: Installation.
   if (reqType === "Installation Request") {
-    const installDate = document.getElementById("install_date").value;
-    if (!installDate) {
+    const installDate = document.getElementById("install_date");
+    if (!installDate || !installDate.value) {
       showError("install_date", "Preferred installation date is required.");
       isValid = false;
     } else {
@@ -289,10 +237,9 @@ function validateForm() {
     }
   }
 
-  // Conditional Validation: Refund
   if (reqType === "Refund Request") {
-    const refundReason = document.getElementById("refund_reason").value;
-    if (!refundReason) {
+    const refundReason = document.getElementById("refund_reason");
+    if (!refundReason || !refundReason.value) {
       showError("refund_reason", "Please select a refund reason.");
       isValid = false;
     } else {
@@ -300,27 +247,22 @@ function validateForm() {
     }
   }
 
-  // Description check
-  if (!desc) {
-    showError("description", "Description is required.");
-    isValid = false;
-  } else {
-    clearError("description");
-  }
+  // Mandatory Description Check
+  if (!desc) { showError("description", "Description is required."); isValid = false; } else clearError("description");
 
   return isValid;
 }
 
-function showError(fieldId, message) {
-  const field = document.getElementById(fieldId);
-  const errorSpan = document.getElementById(`${fieldId}-error`);
-  if (field) field.classList.add("input-invalid");
-  if (errorSpan) errorSpan.textContent = message;
+function showError(id, msg) {
+  const f = document.getElementById(id);
+  const e = document.getElementById(`${id}-error`);
+  if (f) f.classList.add("input-invalid");
+  if (e) e.textContent = msg;
 }
 
-function clearError(fieldId) {
-  const field = document.getElementById(fieldId);
-  const errorSpan = document.getElementById(`${fieldId}-error`);
-  if (field) field.classList.remove("input-invalid");
-  if (errorSpan) errorSpan.textContent = "";
+function clearError(id) {
+  const f = document.getElementById(id);
+  const e = document.getElementById(`${id}-error`);
+  if (f) f.classList.remove("input-invalid");
+  if (e) e.textContent = "";
 }
